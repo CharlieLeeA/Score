@@ -7,9 +7,19 @@ Original file is located at
     https://colab.research.google.com/drive/1eWVSZglgPtdbeNkn5DF7j8Rke2zSTS_g
 """
 
-Score = input().split()
-countF = 0
-for i in Score:
-    if int(i) < 60:
-        countF += 1
-print("不及格人数：", countF)
+scores = input().split()
+count = 0
+max_score = int(scores[0])
+min_score = int(scores[0])
+
+for s in scores:
+    score = int(s)
+    if score < 60:
+        count += 1
+    if score > max_score:
+        max_score = score
+    if score < min_score:
+        min_score = score
+
+print("不及格人數：", count)
+print("最高分：", max_score, "最低分：", min_score)
